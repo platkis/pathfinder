@@ -1,8 +1,0 @@
-/* Body of home page, including background photo */
-body{
-    background-image: url("../img/trail.jpg"); 
-    background-repeat:no-repeat;
-    background-size:cover;
-    background-attachment: fixed;
-    color: white;
-}
