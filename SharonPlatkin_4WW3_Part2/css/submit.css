@@ -1,0 +1,52 @@
+/* Body of new path submission page, including background photo */
+
+body{
+    background-image: url("../img/trail3.jpg"); 
+    background-repeat:no-repeat;
+    background-size:cover;
+    background-attachment: fixed;
+    color: white;
+}
+
+/*Div containing all the forms*/
+.form-wrapper{
+    padding-left: 10%;
+}
+
+/*Diving page in 2*/
+/*Div on left side*/
+
+form.left{
+    width: 50%;
+    float: left;
+    font-size: 17pt;
+}
+
+/*Div on right side*/
+
+form.right{
+    width: 50%;
+    float: left;
+    font-size: 17pt;
+}
+
+/*Submission button area formating*/
+form.submit{
+    width: 100%;
+    clear: both;
+    padding-top: 5%;
+    text-align: center;
+}
+
+/*Submission button formatting*/
+input[type=submit] {
+    width: 20%;  
+    height: 2%;
+    font-size: 17pt;
+}
+
+/*Number inputs formating*/
+input[type=number] {
+    width: 15%; 
+    font-size: 17pt;
+}

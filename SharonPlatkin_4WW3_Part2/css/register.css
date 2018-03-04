@@ -1,0 +1,22 @@
+/* Body of registration page, including background photo */
+
+body{
+    background-image: url("../img/trail4.jpg"); 
+    background-repeat:no-repeat;
+    background-size:cover;
+    background-attachment: fixed;
+    color: white;
+}
+
+/*Formatting of any form element*/
+form{
+    font-size: 15pt;
+    padding-left: 40%;
+}
+
+/*Format of any submit button*/
+input[type=submit] {
+    width: 20%;  
+    height: 2%;
+    font-size: 15pt;
+}
