@@ -29,10 +29,11 @@ body{
     float: left;
 }
 
-/* Map picture format */
+/* Map format */
 #map {
     height: 400px;
-    width: 50%;
+    width: 40%;
+    float: left;
 }
 
 /* Reviews section format */

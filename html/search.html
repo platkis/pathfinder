@@ -7,6 +7,9 @@
     <link rel="stylesheet" type="text/css" href="../css/search.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="../js/search.js"></script>
+    <script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB8x7PLHWv7ziI4XWEmQrhbjAPOS-kpdQ4&callback=drawMap">
+    </script>
     <title>PathFinder</title>
 </head>
 <body>
@@ -34,6 +37,10 @@
         <input type="checkbox">Rating
     </form>          
     <br><br>
+
+    <button onclick="getLocation()">GET YOUR LOCATION</button>
+    <div id="locationMsg"></div>
+
     <!-- Results table -->
     <table>
         <tr>
@@ -42,19 +49,20 @@
             <th>Average Rating</th>
         </tr>
         <tr>
-            <td><a href="./individual_sample.html">Rail Trail</a></td>
+            <td><a href="./railtrail.html">Rail Trail</a></td>
             <td>Hamilton, ON</td>
             <td>8</td>
         </tr>
         <tr>
-            <td>Bruce Trail</td>
+            <td><a href="./brucetrail.html"></a>Bruce Trail</td></td>
             <td>Hamilton</td>
             <td>6</td>
         </tr>
     </table>
 
-    <button onclick="getLocation()">GET YOUR LOCATION</button>
-    <div id="locationMsg"></div>
+     <!-- Map -->
+     <div id="map"></div>
+
      <!-- Footer -->
     <footer>
         <p>Created by: Sharon Platkin</p>
