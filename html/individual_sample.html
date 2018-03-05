@@ -6,6 +6,9 @@
     <link rel="stylesheet" type="text/css" href="../css/shared.css">
     <link rel="stylesheet" type="text/css" href="../css/path.css">
     <script src="../js/path.js"></script>
+    <script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB8x7PLHWv7ziI4XWEmQrhbjAPOS-kpdQ4&callback=drawMap">
+    </script>
     <title>PathFinder</title>
 </head>
 <body>
@@ -38,10 +41,10 @@
         <div class="img" alt="picture of rail trail">
             <img src="../img/railtrail.jpg"/>
         </div>
-        <!-- Map (image for now) -->
-        <div class="map" alt="location of rail trail on map">    
-            <img src="../img/map.png"/>
-        </div>
+        
+        <!-- Map -->
+        <div id="map"></div>
+
         <!-- Reviews -->
         <div class="reviews">
             <u><h2>Reviews</h3></u>

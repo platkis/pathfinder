@@ -24,9 +24,9 @@
 
     <!-- Registration form including type validation-->
     <form>
-        First name: <input required type="text" pattern="[A-Za-z]{1,32}" oninput="setCustomValidity('')" oninvalid="this.setCustomValidity('Name must contain letters only!')" name="fname"><br><br>
-        Last name: <input required type="text" pattern="[A-Za-z]{1,32}" oninput="setCustomValidity('')" oninvalid="this.setCustomValidity('Name must contain letters only!')" name="lname"><br><br>
-        Email: <input required  type="email" oninput="setCustomValidity('')" oninvalid="this.setCustomValidity('Please follow format example@pathfinder.com')" name="email"><br><br>
+        First name: <input required type="text" name="fname"><br><br>
+        Last name: <input required type="text" name="lname"><br><br>
+        Email: <input required  type="email" name="email"><br><br>
         Date of birth <input required  type="date" name="bday"><br><br>
         Password: <input required  type="password" name="password"><br><br>
         
