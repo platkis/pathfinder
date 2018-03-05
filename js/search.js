@@ -2,6 +2,9 @@
 function getLocation() {
     navigator.geolocation.getCurrentPosition(showPosition);
     var currentLoc = document.getElementById("currentLoc");
+}
+
+function showPosition(position) {
     currentLoc.innerHTML = "Location: " + position.coords.latitude + ", " + position.coords.longitude;
 }
 
