@@ -1,15 +1,19 @@
-//get location function
+//get location function - help from https://www.w3schools.com/html/html5_geolocation.asp
 function getLocation() {
+    //get current position using geolocation api
     navigator.geolocation.getCurrentPosition(showPosition);
+    //get element to be able to show our location
     var currentLoc = document.getElementById("currentLoc");
 }
 
 function showPosition(position) {
+    //show location in elemeent
     currentLoc.innerHTML = "Location: " + position.coords.latitude + ", " + position.coords.longitude;
 }
 
 function drawMap() {
 
+    //array of lcoations including names, lat, long and links
     var locations = [
         ['Rail Trail', 43.235375, -79.827632, "../html/railtrail.html"],
         ['Bruce Trail', 43.23425, -80,"../html/brucetrail.html"]

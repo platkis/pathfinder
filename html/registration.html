@@ -23,16 +23,16 @@
     </div>
 
     <!-- Registration form including type validation-->
-    <form>
-        First name: <input required type="text" name="fname"><br><br>
-        Last name: <input required type="text" name="lname"><br><br>
-        Email: <input required  type="email" name="email"><br><br>
-        Date of birth <input required  oninput="validateDate()" type="date" id="bday" name="bday"><br><br>
-        Password: <input required  type="password" name="password"><br><br>
-        
+    <form onsubmit="return validate()">
+        First name: <input required type="text" name="fname" id="fname"><br><br>
+        Last name: <input required type="text" name="lname" id="lname"><br><br>
+        Email: <input required  type="email" name="email" id="email"><br><br>
+        Date of birth <input required type="date" id="bday" name="bday"><br><br>
+        Password: <input required  type="password" name="password" id="password"><br><br>
         <input type="submit" value="Register">
     </form>
 
+    <div id="errorMessage"></div>
     <!-- Footer -->
     <footer>
         <p>Created by: Sharon Platkin</p>
