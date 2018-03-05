@@ -1,4 +1,9 @@
-
+//get location function
 function getLocation() {
-    navigator.geolocation.getCurrentPosition(showPosition);
+    //get location
+    navigator.geolocation.getCurrentPosition();
+
+    //display message in locationMsg div
+    var message = document.getElementById("locationMsg");
+    locationMsg.innerHTML = "Location being tracked!";
 }
