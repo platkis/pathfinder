@@ -16,7 +16,7 @@ body{
 /*Diving page in 2*/
 /*Div on left side*/
 
-form.left{
+.left{
     width: 50%;
     float: left;
     font-size: 17pt;
@@ -24,7 +24,7 @@ form.left{
 
 /*Div on right side*/
 
-form.right{
+.right{
     width: 50%;
     float: left;
     font-size: 17pt;

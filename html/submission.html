@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html>
-<!-- Stylesheets and title -->
+<!-- Stylesheets, scripts and title -->
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="../css/shared.css">
     <link rel="stylesheet" type="text/css" href="../css/submit.css">
+    <script src="../js/submission.js"></script>
     <title>PathFinder</title>
 </head>
 <body>
@@ -22,11 +23,11 @@
     </div>
 
     <!-- Wrapper for submission form -->
-    <div class="form-wrapper">
+    <form class="form-wrapper">
         <!-- Fields on the left of the page -->
-        <form class="left">
-            Name of Trail <input type="text"><br><br>
-            Picture <input type="file" accept="image/*"><br>
+        <div class="left">
+            Name of Trail <input required pattern="[A-Za-z]{1,32}" oninput="setCustomValidity('')" oninvalid="this.setCustomValidity('Name must contain letters only!')" type="text"><br><br>
+            Picture <input required type="file" accept="image/*"><br>
             Type of Ground
             <input type="checkbox">Dirt
             <input type="checkbox">Pavement
@@ -39,9 +40,9 @@
             <input type="checkbox">In-ine Skaters
             <input type="checkbox">Equestrians
             <br>
-        </form>
+        </div>
         <!-- Fields on the right of the page -->
-        <form class="right">
+        <div class="right">
             <div class="custom-select" style="width:200px;">
                 Season
                 <select>
@@ -52,21 +53,19 @@
                 </select>
             </div>
             <br><br>
-            Difficulty <input type="range"><br>
-            Latitude <input type="number"><br>
-            Longitude <input type="number"><br>
+            Difficulty <input required type="range"><br>
+            Latitude <input required type="number"><br>
+            Longitude <input required type="number"><br>
             Overall Rating 
             <input type="radio" name="rating" value="1"> 1
             <input type="radio" name="rating" value="2"> 2
             <input type="radio" name="rating" value="3"> 3
             <input type="radio" name="rating" value="4"> 4
             <input type="radio" name="rating" value="5"> 5
-        </form>
+        </div>
         <!-- Submission button -->
-        <form class="submit">
-            <input type="submit" value="Submit">
-        </form>
-    </div>
+        <input type="submit" value="Submit">
+    </form>
 
     <!-- Footer -->
     <footer>

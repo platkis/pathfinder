@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html>
-<!-- Stylesheets and title -->
+<!-- Stylesheets, scripts and title -->
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="../css/shared.css">
     <link rel="stylesheet" type="text/css" href="../css/register.css">
+    <script src="../js/registration.js"></script>
     <title>PathFinder</title>
 </head>
 <body>
@@ -21,18 +22,14 @@
         <h1 class="centre">Register</h1>
     </div>
 
-    <!-- Registration form -->
-    <form class="fields">
-        First name: <input type="text" name="fname"><br><br>
-        Last name: <input type="text" name="lname"><br><br>
-        Email: <input type="email" name="email"><br><br>
-        Date of birth <input type="date" name="bday"><br><br>
-        Password: <input type="password" name="password"><br><br>
-        Confirm Password:  <input type="password" name="password2"><br><br>
-    </form>
-
-    <!-- Submit button for registration -->
-    <form class="submit">
+    <!-- Registration form including type validation-->
+    <form>
+        First name: <input required type="text" pattern="[A-Za-z]{1,32}" oninput="setCustomValidity('')" oninvalid="this.setCustomValidity('Name must contain letters only!')" name="fname"><br><br>
+        Last name: <input required type="text" pattern="[A-Za-z]{1,32}" oninput="setCustomValidity('')" oninvalid="this.setCustomValidity('Name must contain letters only!')" name="lname"><br><br>
+        Email: <input required  type="email" oninput="setCustomValidity('')" oninvalid="this.setCustomValidity('Please follow format example@pathfinder.com')" name="email"><br><br>
+        Date of birth <input required  type="date" name="bday"><br><br>
+        Password: <input required  type="password" name="password"><br><br>
+        
         <input type="submit" value="Register">
     </form>
 
