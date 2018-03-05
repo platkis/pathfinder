@@ -1,6 +1,7 @@
 //get location function
 function getLocation() {
-    navigator.geolocation.getCurrentPosition();
+    var currentLoc = navigator.geolocation.getCurrentPosition(showPosition);
+    document.getElementById("currentLoc").innerHTML = currentLoc;
 }
 
 function drawMap() {
