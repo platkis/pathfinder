@@ -4,7 +4,7 @@ function validate(){
     var lname = document.getElementById("lname");
     var email = document.getElementById("email");
     var bday = document.getElementById("bday");
-    var password = document.getElementById("password");
+    var password = document.getElementById("pass");
 
     //error message display element
     var errorMessage = document.getElementById("errorMessage");
@@ -25,6 +25,7 @@ function validate(){
     //if email not valid
     if(!emailValidate(email)){
         //append to message email is invalid
+        console.log(email);
         message = message + "Email invalid!\n";
     }
     //if birth date not valid
@@ -36,7 +37,7 @@ function validate(){
     
     //display an error message
     errorMessage.innerHTML = message;
-    return false;
+    return true;
 }
 
 //name validation
@@ -61,5 +62,6 @@ function dateValidate(date){
 //email validation
 function emailValidate(email){
     //must have characters, then @, then more characters, then ., then 2 or 3 more characters
-    return /[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}/.test(email);
+    console.log("email" + email);
+    return /[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}/.test(email);
 }

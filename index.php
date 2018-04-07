@@ -9,25 +9,22 @@
     <title>PathFinder</title>
 </head>
 <body>
-    <!-- Navigation bar -->
-    <div class="topnav">
-        <a class="active" href="./index.html">Home</a>
-        <a href="./html/registration.html">Register</a>
-        <a href="./html/search.html">Search</a>
-        <a href="./html/submission.html">Submit</a>
-    </div>
 
+    
+<div class="topnav">
+            <a class="active" href="./index.php">Home</a>
+            <a href="./php/registration.php">Register</a>
+            <a href="./php/search.php">Search</a>
+            <a href="./php/submission.php">Submit</a>
+        </div>
+    
     <!-- Page Main Title -->
     <div class="title">
         <h1>Welcome to Path Finder</h1>
         <h3>Your outdoor adventure begins here</h3>
-        <h5>Register Today</h5>
     </div>
     
-    <!-- Footer -->
-    <footer>
-        <p>Created by: Sharon Platkin</p>
-        <p>Contact information: <a href="mailto:sharonplatkin@hotmail.com">sharonplatkin@hotmail.com</a></p>
-    </footer>
+    <?php include 'php/footer.php'; ?>
+    
 </body>
 </html>

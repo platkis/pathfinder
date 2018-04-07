@@ -9,34 +9,25 @@
     <title>PathFinder</title>
 </head>
 <body>
-<!-- Navigation bar -->
-    <div class="topnav">
-        <a href="../index.html">Home</a>
-        <a class="active" href="./registration.html">Register</a>
-        <a href="./search.html">Search</a>
-        <a href="./submission.html">Submit</a>
-    </div>
-
+    <?php include '../php/navbar.php';?>
+    
     <!-- Page Main Title -->
     <div class="title">
         <h1 class="centre">Register</h1>
     </div>
 
     <!-- Registration form including type validation-->
-    <form onsubmit="return validate()">
+    <form onsubmit="return validate()" action ="./query/submit_user.php" method='post'>
         First name: <input required type="text" name="fname" id="fname"><br><br>
         Last name: <input required type="text" name="lname" id="lname"><br><br>
         Email: <input required  type="email" name="email" id="email"><br><br>
-        Date of birth <input required type="date" id="bday" name="bday"><br><br>
-        Password: <input required  type="password" name="password" id="password"><br><br>
+        Date of birth <input required type="date" name="bday"  id="bday" n><br><br>
+        Password: <input required  type="password" name="pass" id="pass"><br><br>
         <input type="submit" value="Register">
     </form>
-
     <div id="errorMessage"></div>
-    <!-- Footer -->
-    <footer>
-        <p>Created by: Sharon Platkin</p>
-        <p>Contact information: <a href="mailto:sharonplatkin@hotmail.com">sharonplatkin@hotmail.com</a></p>
-    </footer>
+    
+
+    <?php include '../php/footer.php'; ?>
 </body>
 </html>

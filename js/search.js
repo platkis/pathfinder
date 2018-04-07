@@ -15,8 +15,8 @@ function drawMap() {
 
     //array of lcoations including names, lat, long and links
     var locations = [
-        ['Rail Trail', 43.235375, -79.827632, "../html/railtrail.html"],
-        ['Bruce Trail', 43.23425, -80,"../html/brucetrail.html"]
+        ['Rail Trail', 43.235375, -79.827632, "../php/railtrail.php"],
+        ['Bruce Trail', 43.23425, -80,"../php/brucetrail.php"]
     ];   
 
     //initialize map with zoom and center options

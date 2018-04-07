@@ -9,13 +9,8 @@
     <title>PathFinder</title>
 </head>
 <body>
-    <!-- Navigation bar -->
-    <div class="topnav">
-        <a href="../index.html">Home</a>
-        <a href="./registration.html">Register</a>
-        <a href="./search.html">Search</a>
-        <a class="active" href="./submission.html">Submit</a>
-    </div>
+    <?php include '../php/navbar.php';?>
+    
 
     <!-- Page Main Title -->
     <div class="title">

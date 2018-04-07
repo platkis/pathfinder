@@ -13,13 +13,8 @@
     <title>PathFinder</title>
 </head>
 <body>
-    <!-- Navigation bar -->
-    <div class="topnav">
-        <a href="../index.html">Home</a>
-        <a href="./registration.html">Register</a>
-        <a class="active" href="./search.html">Search</a>
-        <a href="./submission.html">Submit</a>
-    </div>
+    <?php include '../php/navbar.php';?>
+    
 
     <!-- Page Main Title -->
     <div class="title">
@@ -49,12 +44,12 @@
             <th>Average Rating</th>
         </tr>
         <tr>
-            <td><a href="./railtrail.html">Rail Trail</a></td>
+            <td><a href="./railtrail.php">Rail Trail</a></td>
             <td>Hamilton, ON</td>
             <td>8</td>
         </tr>
         <tr>
-            <td><a href="./brucetrail.html"></a>Bruce Trail</td></td>
+            <td><a href="./brucetrail.php"></a>Bruce Trail</td></td>
             <td>Hamilton</td>
             <td>6</td>
         </tr>

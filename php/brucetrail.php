@@ -12,17 +12,12 @@
     <title>PathFinder</title>
 </head>
 <body>
-    <!-- Navigation Bar -->
-    <div class="topnav">
-        <a href="../index.html">Home</a>
-        <a href="./registration.html">Register</a>
-        <a href="./search.html">Search</a>
-        <a href="./submission.html">Submit</a>
-    </div>
+    <?php include 'php/navbar.php';?>
+    
 
     <!-- Page Main Title, Name of Path -->
     <div class="title">
-        <h1 class="centre">Rail Trail</h1>
+        <h1 class="centre">Bruce Trail</h1>
     </div>
 
     <!-- Wrapper of elements -->
@@ -31,14 +26,14 @@
         <div class="info">
             <b>Ground:          </b> Gravel <br>
             <b>Number of Hills: </b> 4 <br>
-            <b>Good for:        </b> Pedestrians, Cyclers, Equestrians <br>
+            <b>Good for:        </b> Pedestrians, Cyclers <br>
             <b>Season:          </b> Year-Round <br>
-            <b>Difficulty:      </b> 70/100 <br>
-            <b>Location:        </b> Hamilton-Brantford <br>
-            <b>Overall Rating:  </b> 8
+            <b>Difficulty:      </b> 40/100 <br>
+            <b>Location:        </b> Hamilton <br>
+            <b>Overall Rating:  </b> 6
         </div>
         <!-- Path image -->
-        <div class="img" alt="picture of rail trail">
+        <div class="img" alt="picture of bruce trail">
             <img src="../img/railtrail.png"/>
         </div>
         
