@@ -11,12 +11,8 @@
 <body>
 
     
-<div class="topnav">
-            <a class="active" href="./index.php">Home</a>
-            <a href="./php/registration.php">Register</a>
-            <a href="./php/search.php">Search</a>
-            <a href="./php/submission.php">Submit</a>
-        </div>
+<?php include 'php/static/navbar.php';
+    activePage("home");?>
     
     <!-- Page Main Title -->
     <div class="title">

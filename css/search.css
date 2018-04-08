@@ -35,5 +35,6 @@ tr:nth-child(odd) {
 #map {
     height: 400px;
     width: 50%;
+    left: 50%;
     text-align: center;
 }

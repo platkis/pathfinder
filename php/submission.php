@@ -9,7 +9,8 @@
     <title>PathFinder</title>
 </head>
 <body>
-    <?php include '../php/static/navbar.php';?>
+    <?php include '../php/static/navbar.php';
+    activePage("submission");?>
     
 
     <!-- Page Main Title -->

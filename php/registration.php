@@ -9,7 +9,8 @@
     <title>PathFinder</title>
 </head>
 <body>
-    <?php include './static/navbar.php';?>
+    <?php include './static/navbar.php';
+    activePage("registration");?>
     
     <!-- Page Main Title -->
     <div class="title">
