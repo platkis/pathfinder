@@ -9,7 +9,7 @@
     <title>PathFinder</title>
 </head>
 <body>
-    <?php include '../php/navbar.php';?>
+    <?php include '../php/static/navbar.php';?>
     
 
     <!-- Page Main Title -->
@@ -63,6 +63,6 @@
     </form>
 
     
-    <?php include './footer.php'; ?>   
+    <?php include './static/footer.php'; ?>   
 </body>
 </html>

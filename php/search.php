@@ -13,7 +13,7 @@
     <title>PathFinder</title>
 </head>
 <body>
-    <?php include '../php/navbar.php';?>
+    <?php include '../php/static/navbar.php';?>
     
     <!-- Page Main Title -->
     <div class="title">
@@ -22,22 +22,20 @@
     <!-- Searching text box, button, criteria -->
     <form action ="./dynamic/results.php" method='post'>
         <input type="text" placeholder="Search by Name.." name="search_name">
-        <button type="submit"><i class="fa fa-search"></i></button>
-
-        <br>
+        
+        <br><br>
         <input type="radio" name="search_rating" value="1"> 1
         <input type="radio" name="search_rating" value="2"> 2
         <input type="radio" name="search_rating" value="3"> 3
         <input type="radio" name="search_rating" value="4"> 4
         <input type="radio" name="search_rating" value="5"> 5
         <input type="submit" value="Search by Rating">
-    
-        <br>
-        
+        <br><br>
         <input type="submit" value="Search by Current Location" name="search_location">
+        <button type="submit"><i class="fa fa-search"></i></button>
     </form>  
 
-    <?php include 'footer.php';?>
+    <?php include 'static/footer.php';?>
 
 </body>
 </html>

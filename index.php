@@ -24,7 +24,7 @@
         <h3>Your outdoor adventure begins here</h3>
     </div>
     
-    <?php include 'php/footer.php'; ?>
+    <?php include 'php/static/footer.php'; ?>
     
 </body>
 </html>

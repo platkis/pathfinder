@@ -9,7 +9,7 @@
     <title>PathFinder</title>
 </head>
 <body>
-    <?php include '../php/navbar.php';?>
+    <?php include './static/navbar.php';?>
     
     <!-- Page Main Title -->
     <div class="title">
@@ -28,6 +28,6 @@
     <div id="errorMessage"></div>
     
 
-    <?php include '../php/footer.php'; ?>
+    <?php include '../php/static/footer.php'; ?>
 </body>
 </html>
