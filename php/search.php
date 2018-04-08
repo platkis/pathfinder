@@ -15,49 +15,29 @@
 <body>
     <?php include '../php/navbar.php';?>
     
-
     <!-- Page Main Title -->
     <div class="title">
         <h1 class="centre">Search Path</h1>
     </div>
     <!-- Searching text box, button, criteria -->
-    <form>
-        <input type="text" placeholder="Search..">
+    <form action ="./dynamic/results.php" method='post'>
+        <input type="text" placeholder="Search by Name.." name="search_name">
         <button type="submit"><i class="fa fa-search"></i></button>
+
         <br>
-        Search By
-        <input type="checkbox">Name
-        <input type="checkbox">Location
-        <input type="checkbox">Type of Ground
-        <input type="checkbox">Rating
-    </form>          
-    <br><br>
+        <input type="radio" name="search_rating" value="1"> 1
+        <input type="radio" name="search_rating" value="2"> 2
+        <input type="radio" name="search_rating" value="3"> 3
+        <input type="radio" name="search_rating" value="4"> 4
+        <input type="radio" name="search_rating" value="5"> 5
+        <input type="submit" value="Search by Rating">
+    
+        <br>
+        
+        <input type="submit" value="Search by Current Location" name="search_location">
+    </form>  
 
-    <button onclick="getLocation()">GET YOUR LOCATION</button>
-    <div id="currentLoc"></div>
+    <?php include 'footer.php';?>
 
-    <!-- Results table -->
-    <table>
-        <tr>
-            <th>Name</th>
-            <th>Location</th>
-            <th>Average Rating</th>
-        </tr>
-        <tr>
-            <td><a href="./railtrail.php">Rail Trail</a></td>
-            <td>Hamilton, ON</td>
-            <td>8</td>
-        </tr>
-        <tr>
-            <td><a href="./brucetrail.php"></a>Bruce Trail</td></td>
-            <td>Hamilton</td>
-            <td>6</td>
-        </tr>
-    </table>
-
-     <!-- Map -->
-     <div id="map"></div>
-
-     <?php include 'footer.php';?>
 </body>
 </html>

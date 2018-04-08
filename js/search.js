@@ -1,4 +1,3 @@
-//get location function - help from https://www.w3schools.com/html/html5_geolocation.asp
 function getLocation() {
     //get current position using geolocation api
     navigator.geolocation.getCurrentPosition(showPosition);
@@ -12,7 +11,6 @@ function showPosition(position) {
 }
 
 function drawMap() {
-
     //array of lcoations including names, lat, long and links
     var locations = [
         ['Rail Trail', 43.235375, -79.827632, "../php/railtrail.php"],

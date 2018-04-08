@@ -16,22 +16,26 @@ function validate(){
     if (!nameValidate(fname)){
         //append to message first name is invalid
         message = message + "First name invalid!\n";
+        return false;
     }
     //if last name not valid
     if(!nameValidate(lname)){
         //append to message last name is invalid
         message = message + "Last name invalid!\n";
+        return false;
     }
     //if email not valid
     if(!emailValidate(email)){
         //append to message email is invalid
         console.log(email);
         message = message + "Email invalid!\n";
+        return false;
     }
     //if birth date not valid
     if (!dateValidate(bday)){
         //append to message birth date is invalid
         message = message + "Birth date invalid!\n";
+        return false;
     }
    
     

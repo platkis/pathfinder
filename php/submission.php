@@ -18,7 +18,7 @@
     </div>
 
     <!-- Wrapper for submission form -->
-    <form class="form-wrapper" action ="./query/submit_path.php" method='post'>
+    <form class="form-wrapper">
         <!-- Fields on the left of the page -->
         <div class="left">
             Name of Trail <input required pattern="[A-Za-z]{1,32}" oninput="setCustomValidity('')" oninvalid="this.setCustomValidity('Name must contain letters only!')" type="text" name="path_name"><br><br>
@@ -42,9 +42,9 @@
                 Season
                 <select name="path_season">
                     <option value="0">Select Season:</option>
-                    <option value="1">Fall-Winter</option>
-                    <option value="2">Spring-Summer</option>
-                    <option value="3">Year Round<ption>
+                    <option value="fall-winter">Fall-Winter</option>
+                    <option value="spring-summer">Spring-Summer</option>
+                    <option value="year-round">Year Round<ption>
                 </select>
             </div>
             <br><br>
