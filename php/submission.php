@@ -35,7 +35,9 @@
             <input type="checkbox" value="Cyclers"name="path_user_type[]">Cyclers
             <input type="checkbox" value="In-line Skaters" name="path_user_type[]">In-ine Skaters
             <input type="checkbox" value="Equestrians" name="path_user_type[]">Equestrians
-            <br>
+            <br><br>
+            Review <input required type="text" name="path_review">
+            
         </div>
         <!-- Fields on the right of the page -->
         <div class="right">

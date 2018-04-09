@@ -32,18 +32,21 @@
 
         $list_markers = "";
         
-        $sql = "SELECT * FROM paths";
+        $sql = "SELECT *,avg(r.rating) AS avgRat FROM paths
+        LEFT JOIN reviews r ON r.path_id = paths.path_id";
 
         if ($search_name != "") {
             $stmt = $connect -> prepare($sql . " WHERE name = :nsearch;");
             $stmt->bindParam(':nsearch', $search_name);
         }
         else if($search_rating != ""){
-            $stmt = $connect -> prepare($sql . " WHERE rating = :rsearch;");
+            $stmt = $connect -> prepare($sql . " WHERE rating >= :rsearch GROUP BY paths.path_id;");
             $stmt->bindParam(':rsearch', $search_rating);
+            echo $sql . " WHERE rating >= :rsearch GROUP BY paths.path_id;";
         }
-        // else if($search_location != ""){
-        // }
+        else if($search_location != ""){
+            $stmt = $connect -> prepare($sql);
+        }
         else{
             $stmt = $connect -> prepare($sql);
         }
@@ -66,7 +69,7 @@
             foreach ($data as $path){
                 echo '<tr><td><a href="./pathdetails.php?id='. $path['path_id'] . '">' . $path['name'] . '</a></td>';
                 echo '<td> lat:' . $path['latitude'] . ', long: ' . $path['longitude'] . '</td>';
-                echo '<td>' . $path['rating'] . '</td></tr>';
+                echo '<td>' . $path['avgRat'] . '</td></tr>';
 
 
                 $list_markers = $list_markers . '["' . $path['name'] .

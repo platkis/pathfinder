@@ -16,6 +16,6 @@
         $stmt->bindValue(':password', password_hash($pass, PASSWORD_BCRYPT));
 
         $stmt->execute();
-        
+        echo '<script>window.location.href = "/";</script>';
     //$reviewId = $connect->lastInsertId();
     ?>

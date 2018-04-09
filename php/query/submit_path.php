@@ -1,4 +1,5 @@
 <?php
+        session_start();
         require '../../vendor/autoload.php';
         include '../../credentials/secretKey.php';
         use Aws\S3\S3Client;
@@ -35,6 +36,7 @@
         $path_lat = $_POST["path_lat"];
         $path_rating = $_POST["path_rating"];
         $path_ground_array= $_POST["path_ground"];
+        $path_review = $_POST["path_review"];
         $N = count($path_ground_array);
         $path_ground = "";
         for($i=0;$i < $N; $i++){
@@ -51,20 +53,30 @@
         $path_season = $_POST["path_season"];
         $path_difficulty = $_POST["path_difficulty"];
 
-        $stmt = $connect->prepare("INSERT INTO paths(name,longitude,latitude,rating,ground_type,num_hills,user_type,season,difficulty,img_add) 
+        $stmt_path = $connect->prepare("INSERT INTO paths(name,longitude,latitude,avgRating,ground_type,num_hills,user_type,season,difficulty,img_add) 
                                 VALUES (:name,:longitude,:latitude,:rating,:ground_type,:num_hills,:user_type,:season,:difficulty,:img)");
-        $stmt->bindParam(':name', $path_name);
-        $stmt->bindParam(':longitude', $path_long);
-        $stmt->bindParam(':latitude', $path_lat);
-        $stmt->bindParam(':rating', $path_rating);
-        $stmt->bindParam(':ground_type', $path_ground);
-        $stmt->bindParam(':num_hills', $path_hills);
-        $stmt->bindParam(':user_type', $path_user_type);
-        $stmt->bindParam(':season', $path_season);
-        $stmt->bindParam(':difficulty', $path_difficulty);
-        $stmt->bindParam(':img', $imageURL);
+        $stmt_path->bindParam(':name', $path_name);
+        $stmt_path->bindParam(':longitude', $path_long);
+        $stmt_path->bindParam(':latitude', $path_lat);
+        $stmt_path->bindParam(':rating', $path_rating);
+        $stmt_path->bindParam(':ground_type', $path_ground);
+        $stmt_path->bindParam(':num_hills', $path_hills);
+        $stmt_path->bindParam(':user_type', $path_user_type);
+        $stmt_path->bindParam(':season', $path_season);
+        $stmt_path->bindParam(':difficulty', $path_difficulty);
+        $stmt_path->bindParam(':img', $imageURL);
 
-        $stmt->execute();
-
+        $stmt_path->execute();
         $path_id = $connect->lastInsertId();
+
+        $stmt_review = $connect->prepare("INSERT INTO reviews(user_id,path_id,rating,review) 
+                                VALUES (:userid,:pathid,:rate,:rev)");
+        $stmt_review->bindParam(':userid', $_SESSION['id']);
+        $stmt_review->bindParam(':pathid', $path_id);
+        $stmt_review->bindParam(':rate', $path_rating);
+        $stmt_review->bindParam(':rev', $path_review);
+        
+        $stmt_review->execute();
+
+        echo '<script>window.location.href = "./pathdetails.php?id='.$path_id.'";</script>';
     ?>

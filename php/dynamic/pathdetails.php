@@ -59,12 +59,17 @@
             '<br><b>Season:          </b>' . $path_season . 
             '<br><b>Difficulty:      </b>' . $path_difficulty .
             '<br><b>Location:        </b>' . $path_lat . ',' . $path_long . 
-            '<br><b>Overall Rating:  </b>' . $path_rating .
+            '<br><b>Overall Rating:  </b>' . $path_rating;
         
+            $tab = ($_SESSION['id']!=null) ? 
             '<form action ="../query/submit_review.php" method="post">  
-            <a href="../query/submit_review.php?id='. $path_id . '">Submit a Review</a>
-                
-            </form>
+                <a href="../query/submit_review.php?id='. $path_id . '">Submit a Review</a>
+            </form>' :
+            
+            'To review, please log in!';
+            
+            echo '<br>' . $tab . '
+
             </div>
             
             <!-- Path image -->
@@ -72,8 +77,6 @@
                 <img src="'.$path_image.'"/>
             </div>'
         ?>
-        
-        
         
         <!-- Map -->
         <div id="map"></div>
