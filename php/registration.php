@@ -8,7 +8,8 @@
     <title>PathFinder</title>
 </head>
 <body>
-    <?php include './static/navbar.php';
+    <?php //include navbar and active page
+    include './static/navbar.php';
     activePage("registration");?>
     
     <!-- Page Main Title -->

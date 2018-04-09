@@ -9,7 +9,8 @@
     <title>PathFinder</title>
 </head>
 <body>
-    <?php include '../php/static/navbar.php';
+    <?php //include navbar including active page
+    include '../php/static/navbar.php';
     activePage("submission");?>
     
 
@@ -19,6 +20,7 @@
     </div>
 
     <!-- Wrapper for submission form -->
+    <!-- Submit to submit_path when button is pressed -->
     <form class="form-wrapper" action ="./query/submit_path.php" method='post' enctype="multipart/form-data">
         <!-- Fields on the left of the page -->
         <div class="left">
@@ -62,7 +64,7 @@
             <input type="radio" name="path_rating" value="5"> 5
         </div>
         <!-- Submission button -->
-        <input type="submit" onclick = "setLocation()" value="Submit">
+        <input type="submit" value="Submit">
     </form>
 
     

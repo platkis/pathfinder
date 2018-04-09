@@ -11,9 +11,11 @@
 
 <?php include './static/navbar.php';
 activePage("search");
-
+//get id from URL
 $path_id = $_GET['id'];
 
+//post a review to submit_review page when button is clicked including the path id
+//review and rating fields to get input from the user
 echo'
 <br><br><br>
 <div class="title">

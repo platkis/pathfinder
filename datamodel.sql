@@ -11,12 +11,13 @@ CREATE TABLE `pathfinder`.`paths` (
   `name` VARCHAR(45) NOT NULL,
   `longitude` DOUBLE NOT NULL,
   `latitude` DOUBLE NOT NULL,
-  `rating` INT NOT NULL,
+  `avgRating` INT NOT NULL,
   `ground_type` VARCHAR(255) NOT NULL,
   `num_hills` VARCHAR(255) NOT NULL,
   `user_type` VARCHAR(255) NOT NULL,
   `season` VARCHAR(255) NOT NULL,
   `difficulty` INT NOT NULL,
+  `img_add` VARCHAR(255),
   PRIMARY KEY (`path_id`));
 
   CREATE TABLE `pathfinder`.`reviews` (

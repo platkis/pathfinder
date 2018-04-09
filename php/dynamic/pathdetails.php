@@ -11,18 +11,24 @@
     <title>PathFinder</title>
 </head>
 <body>
-    <?php include '../static/navbar.php';
+    <?php //include navbar with the active page
+    include '../static/navbar.php';
     activePage("search");
+    //get path_id from URL
         $path_id = $_GET['id'];
 
+        //connect to database
         $connect = new PDO("mysql:host=localhost;dbname=pathfinder","root","smarTserve91");
         $connect->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
+        //prepare sql statement, and bind the parameters
         $path_stmt = $connect -> prepare("SELECT * FROM paths WHERE path_id = :id;");
         $path_stmt->bindParam(':id', $path_id);
+        //execute and get all results
         $path_stmt->execute();
         $path_data = $path_stmt->fetchAll();
 
+        //bind all user inputs to parameters
         $path_name = $path_data[0]['name'];
         $path_lat = $path_data[0]['latitude'];
         $path_long = $path_data[0]['longitude'];
@@ -34,8 +40,10 @@
         $path_difficulty = $path_data[0]['difficulty'];
         $path_image = $path_data[0]['img_add'];
 
+        //get all reviews for specific paath
         $review_stmt = $connect -> prepare("SELECT * FROM reviews WHERE path_id = :id;");
         $review_stmt->bindParam(':id', $path_id);
+        //execute and fetch results
         $review_stmt->execute();
         $review_data = $review_stmt->fetchAll();
 
@@ -52,6 +60,7 @@
         <!-- Path information-->
         
         <?php
+        //display path details
             echo '<div class="info">
             <b>Ground:         </b>' . $path_ground .
             '<br><b>Number of Hills: </b>' . $path_hills .
@@ -60,12 +69,12 @@
             '<br><b>Difficulty:      </b>' . $path_difficulty .
             '<br><b>Location:        </b>lat: ' . $path_lat . ', long: ' . $path_long . 
             '<br><b>Overall Rating:  </b>' . $path_rating;
-        
+        //submit a review for this path if logged in
             $tab = ($_SESSION['id']!=null) ? 
             '<a href="../review.php?id='. $path_id . '">Submit a Review</a>' :
-            
+            //otherwise display message
             'To review, please log in!';
-            
+            //include the image for this path
             echo '<br>' . $tab . '
 
             </div>
@@ -81,6 +90,7 @@
 
         <!-- Reviews -->
         <?php
+        //if no reviews found, display message, otherwise display all reviews in table
             if (sizeof($review_data)==0){
                 echo '<h1 class="centre">No Reviews Yet!</h1>';
             }

@@ -19,11 +19,13 @@
     <div class="title">
         <h1 class="centre">Search Path</h1>
     </div>
-    <!-- Searching text box, button, criteria -->
+    <!-- Searching  criteria -->
     <form action ="./dynamic/results.php" method='post'>
     
+        <!-- Searching by name text box -->
         <input type="text" placeholder="Search by Name.." name="search_name">
         <br><br>
+        <!-- Searching by rating radio buttons -->
         Search by Rating
         <input type="radio" name="search_rating" value="1"> 1
         <input type="radio" name="search_rating" value="2"> 2
@@ -32,12 +34,14 @@
         <input type="radio" name="search_rating" value="5"> 5
 
         <br><br>
+        <!-- Searching by location checkbox -->
         <input type="checkbox" value="location" name="search_location" id="cb_location">Search by Current Location
 
         <br><br>
         
         <button type="submit">Search</button>
         
+        <!-- Hidding fields to get user's lat and long -->
         <input name="latitude" value="" type="hidden">
         <input name="longitude" value="" type="hidden">
 

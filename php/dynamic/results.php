@@ -19,24 +19,24 @@
     </div>
     
     <?php
-
+    //connect to database
         $connect = new PDO("mysql:host=localhost;dbname=pathfinder","root","smarTserve91");
         $connect->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
+    //get search parameters if they are set
         $search_name = isset($_POST["search_name"]) ? $_POST["search_name"] : "";
         $search_rating = isset($_POST["search_rating"]) ? $_POST["search_rating"] : "";
         $search_location = isset($_POST["search_location"]) ? $_POST["search_location"] : "";
-
+    //get current location
         $latitude = $_POST['latitude'];
         $longitude = $_POST['longitude'];
-
+    //list of markers initializer
         $list_markers = "";
-        
+        //prepare sql statement
         $sql = "SELECT *,avg(r.rating) AS avgRat FROM paths
         JOIN reviews r ON r.path_id = paths.path_id
         WHERE 1=1";
 
-
+    //append where clauses according to search parameters
         if ($search_name != "") {
             $stmt = $connect -> prepare($sql . " AND name = :nsearch;");
             $stmt->bindParam(':nsearch', $search_name);
@@ -54,12 +54,12 @@
             $stmt = $connect -> prepare($sql . " GROUP BY paths.path_id;");
         }
 
-
+        //execute and fetch results
         $stmt->execute();
         $data = $stmt ->fetchAll();
     
         //Results table
-    
+        //display all results by appending each set of parameters in loop
         if (sizeof($data)==0){
             echo '<h1 class="centre">No Results Found</h1>';
         }
