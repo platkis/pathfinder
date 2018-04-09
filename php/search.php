@@ -21,12 +21,7 @@
     </div>
     <!-- Searching text box, button, criteria -->
     <form action ="./dynamic/results.php" method='post'>
-
-        
-        <!-- <input name="search_name" value="" type="hidden"> -->
-        <!-- <input name="search_rating" value="" type="hidden"> -->
-        <!-- <input name="search_location" value="" type="hidden"> -->
-
+    
         <input type="text" placeholder="Search by Name.." name="search_name">
         <br><br>
         Search by Rating

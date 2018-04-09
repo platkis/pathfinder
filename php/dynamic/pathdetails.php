@@ -26,7 +26,7 @@
         $path_name = $path_data[0]['name'];
         $path_lat = $path_data[0]['latitude'];
         $path_long = $path_data[0]['longitude'];
-        $path_rating = $path_data[0]['rating'];
+        $path_rating = $path_data[0]['avgRating'];
         $path_ground = $path_data[0]['ground_type'];
         $path_hills = $path_data[0]['num_hills'];
         $path_usertype = $path_data[0]['user_type'];
@@ -53,18 +53,16 @@
         
         <?php
             echo '<div class="info">
-            <b>Ground:         </b>' . "" .
+            <b>Ground:         </b>' . $path_ground .
             '<br><b>Number of Hills: </b>' . $path_hills .
-            '<br><b>Good for:        </b>' . "" . 
+            '<br><b>Good for:        </b>' . $path_usertype . 
             '<br><b>Season:          </b>' . $path_season . 
             '<br><b>Difficulty:      </b>' . $path_difficulty .
-            '<br><b>Location:        </b>' . $path_lat . ',' . $path_long . 
+            '<br><b>Location:        </b>lat: ' . $path_lat . ', long: ' . $path_long . 
             '<br><b>Overall Rating:  </b>' . $path_rating;
         
             $tab = ($_SESSION['id']!=null) ? 
-            '<form action ="../query/submit_review.php" method="post">  
-                <a href="../query/submit_review.php?id='. $path_id . '">Submit a Review</a>
-            </form>' :
+            '<a href="../review.php?id='. $path_id . '">Submit a Review</a>' :
             
             'To review, please log in!';
             

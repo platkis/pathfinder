@@ -42,10 +42,11 @@
         else if($search_rating != ""){
             $stmt = $connect -> prepare($sql . " WHERE rating >= :rsearch GROUP BY paths.path_id;");
             $stmt->bindParam(':rsearch', $search_rating);
-            echo $sql . " WHERE rating >= :rsearch GROUP BY paths.path_id;";
         }
         else if($search_location != ""){
-            $stmt = $connect -> prepare($sql);
+            $stmt = $connect -> prepare($sql . " WHERE latitude between :lat-0.1 and :lat+0.1 AND longitude between :long-0.1 and :long+0.1;");
+            $stmt->bindParam(':lat', $latitude);
+            $stmt->bindParam(':long', $longitude);
         }
         else{
             $stmt = $connect -> prepare($sql);
