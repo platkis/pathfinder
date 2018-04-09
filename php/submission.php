@@ -52,8 +52,8 @@
             </div>
             <br><br>
             Difficulty <input required type="range" name="path_difficulty"><br>
-            Latitude <input required type="number" id="path_lat" name="path_lat" min="-90" max="90"><br>
-            Longitude <input required type="number" id="path_long" name="path_long" min="-180" max="180"><br>
+            Latitude <input required type="number" id="path_lat" name="path_lat" step="0.0001" min="-90" max="90"><br>
+            Longitude <input required type="number" id="path_long" name="path_long" step="0.0001"min="-180" max="180"><br>
             Overall Rating 
             <input type="radio" name="path_rating" value="1"> 1
             <input type="radio" name="path_rating" value="2"> 2
