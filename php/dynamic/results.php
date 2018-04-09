@@ -33,23 +33,25 @@
         $list_markers = "";
         
         $sql = "SELECT *,avg(r.rating) AS avgRat FROM paths
-        LEFT JOIN reviews r ON r.path_id = paths.path_id";
+        JOIN reviews r ON r.path_id = paths.path_id
+        WHERE 1=1";
+
 
         if ($search_name != "") {
-            $stmt = $connect -> prepare($sql . " WHERE name = :nsearch;");
+            $stmt = $connect -> prepare($sql . " AND name = :nsearch;");
             $stmt->bindParam(':nsearch', $search_name);
         }
-        else if($search_rating != ""){
-            $stmt = $connect -> prepare($sql . " WHERE rating >= :rsearch GROUP BY paths.path_id;");
+        if($search_rating != ""){
+            $stmt = $connect -> prepare($sql . " AND rating >= :rsearch GROUP BY paths.path_id;");
             $stmt->bindParam(':rsearch', $search_rating);
         }
-        else if($search_location != ""){
-            $stmt = $connect -> prepare($sql . " WHERE latitude between :lat-0.1 and :lat+0.1 AND longitude between :long-0.1 and :long+0.1;");
+        if($search_location != ""){
+            $stmt = $connect -> prepare($sql . " AND latitude between :lat-0.1 AND :lat+0.1 AND longitude between :long-0.1 and :long+0.1;");
             $stmt->bindParam(':lat', $latitude);
             $stmt->bindParam(':long', $longitude);
         }
         else{
-            $stmt = $connect -> prepare($sql);
+            $stmt = $connect -> prepare($sql . " GROUP BY paths.path_id;");
         }
 
 

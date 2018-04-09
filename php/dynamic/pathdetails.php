@@ -3,7 +3,7 @@
 <!-- Stylesheets, scripts and title -->
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" type="text/css" href="../../../css/shared.css">
+    <link rel="stylesheet" type="text/css" href="../../css/shared.css">
     <link rel="stylesheet" type="text/css" href="../../css/path.css">
     <script async defer
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB8x7PLHWv7ziI4XWEmQrhbjAPOS-kpdQ4&callback=drawMap">

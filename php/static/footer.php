@@ -1,6 +1,6 @@
 <!-- Footer -->
 
-<link rel="stylesheet" type="text/css" href="../css/shared.css">
+<link rel="stylesheet" type="text/css" href="/css/shared.css">
 <?php
 echo '<footer>
             <p>Created by: Sharon Platkin</p>
