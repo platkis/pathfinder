@@ -23,7 +23,13 @@
         Password: <input required  type="password" name="pass"><br><br>
         <input type="submit" value="Login">
     </form>
-    <div class="centre" id="errorMessage"></div>
+    <div class="centre" id="errorMessage">
+        <?php 
+        //error message
+            echo $_GET['msg'];
+        ?>
+        
+    </div>
     
 
     <?php include '../php/static/footer.php'; ?>

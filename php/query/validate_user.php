@@ -14,12 +14,19 @@
     $pass_stmt->bindParam(':email_add', $email);
     $pass_stmt->execute();
     $data = $pass_stmt->fetchall();
-    //if a row is returned, i.e. there is a match in username and password
+    //if a row is returned, i.e. there is a match in username
     if(sizeof($data)==1){
-        //then set the session id to their userid and redirect to home
+        //verify the password entered is correct
         if(password_verify($pass,$data[0]['password'])){
+            //then set the session id to their userid and redirect to home
             $_SESSION['id'] = $data[0]['email'];
             echo '<script>window.location.href = "/";</script>';
+        }else{
+            //if incorrect, return to login page and display error message
+            echo '<script>window.location.href = "../login.php?msg=Invalid Password, Please Try Again";</script>';
         }
+    }else{
+        //if no user found, return to login page and display error message
+        echo '<script>window.location.href = "../login.php?msg=Invalid User, Please Try Again";</script>';
     }
 ?>
