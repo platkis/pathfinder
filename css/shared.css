@@ -34,12 +34,17 @@ body, html{
     font-size: 20pt;
 }
 
+.centre{
+    text-align: center;
+}
 /* Footer */
 footer {
-    position:fixed;
+    display: inline-block;
     bottom:0;
     width: 100%;
     background-color: #eee8e8c2;
     color: black;
     text-align: center;
+    clear: both;
  }
+

@@ -5,7 +5,6 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="../css/shared.css">
     <link rel="stylesheet" type="text/css" href="../css/register.css">
-    <script src="../js/registration.js"></script>
     <title>PathFinder</title>
 </head>
 <body>
@@ -26,9 +25,12 @@
         Password: <input required  type="password" name="pass" id="pass"><br><br>
         <input type="submit" value="Register">
     </form>
-    <div id="errorMessage"></div>
+    <div class="centre" id="errorMessage"></div>
     
 
     <?php include '../php/static/footer.php'; ?>
+    
 </body>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script src="../js/registration.js"></script>
 </html>

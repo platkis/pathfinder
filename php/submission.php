@@ -19,15 +19,15 @@
     </div>
 
     <!-- Wrapper for submission form -->
-    <form class="form-wrapper">
+    <form class="form-wrapper" action ="./query/submit_path.php" method='post' enctype="multipart/form-data">
         <!-- Fields on the left of the page -->
         <div class="left">
-            Name of Trail <input required pattern="[A-Za-z]{1,32}" oninput="setCustomValidity('')" oninvalid="this.setCustomValidity('Name must contain letters only!')" type="text" name="path_name"><br><br>
-            Picture <input required type="file" accept="image/*"><br>
+            Name of Trail <input required oninput="setCustomValidity('')" oninvalid="this.setCustomValidity('Name must contain letters only!')" type="text" name="path_name"><br><br>
+            Picture <input required type="file" accept="image/*" name="path_picture"><br>
             Type of Ground
-            <input type="checkbox" name="path_ground[]">Dirt
-            <input type="checkbox" name="path_ground[]">Pavement
-            <input type="checkbox" name="path_ground[]">Gravel
+            <input type="checkbox" value="Dirt" name="path_ground[]">Dirt
+            <input type="checkbox" value="Pavement" name="path_ground[]">Pavement
+            <input type="checkbox" value="Gravel" name="path_ground[]">Gravel
             <br><br>
             Number of Hills <input type="number" name="path_hills"><br>
             Good for
@@ -50,8 +50,8 @@
             </div>
             <br><br>
             Difficulty <input required type="range" name="path_difficulty"><br>
-            Latitude <input required type="number" id="path_lat" name="path_lat"><br>
-            Longitude <input required type="number" id="path_long" name="path_long"><br>
+            Latitude <input required type="number" id="path_lat" name="path_lat" min="-90" max="90"><br>
+            Longitude <input required type="number" id="path_long" name="path_long" min="-180" max="180"><br>
             Overall Rating 
             <input type="radio" name="path_rating" value="1"> 1
             <input type="radio" name="path_rating" value="2"> 2

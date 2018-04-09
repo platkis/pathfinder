@@ -5,10 +5,6 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="../../css/shared.css">
     <link rel="stylesheet" type="text/css" href="../../css/path.css">
-    <script src="../../js/path.js"></script>
-    <script async defer
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB8x7PLHWv7ziI4XWEmQrhbjAPOS-kpdQ4&callback=drawMap">
-    </script>
     <title>PathFinder</title>
 </head>
 <body>
@@ -32,14 +28,15 @@ activePage("search");?>
     
         $review = "test";
         $rating = 4;
-        $path_id = 3;
+        $path_id = 2;
+        $user_id = 1;
 
-        $stmt = $connect->prepare("INSERT INTO reviews(path_id,review,rating))
-        VALUES (:id,:rev,:rate);");
-        $stmt->bindParam(':rev', $review);
+        $stmt = $connect->prepare("INSERT INTO reviews(user_id,path_id,rating,review)
+        VALUES (:userid,:pathid,:rate,:rev);");
+        $stmt->bindParam(':userid', $user_id);
+        $stmt->bindParam(':pathid', $path_id);
         $stmt->bindParam(':rate', $rating);
-        $stmt->bindParam(':id', $rating);
-
+        $stmt->bindParam(':rev', $review);
         $stmt->execute();
 ?>
 

@@ -1,47 +1,48 @@
 function validate(){
     //get all user inputs
-    var fname = document.getElementById("fname");
-    var lname = document.getElementById("lname");
-    var email = document.getElementById("email");
-    var bday = document.getElementById("bday");
-    var password = document.getElementById("pass");
+    var fname = document.getElementById("fname").value;
+    var lname = document.getElementById("lname").value;
+    var email = document.getElementById("email").value;
+    var bday = document.getElementById("bday").value;
+    var password = document.getElementById("pass").value;
 
     //error message display element
     var errorMessage = document.getElementById("errorMessage");
 
     //error message itself
     var message = "";
+    var isValid = true;
 
     //if first name not valid
     if (!nameValidate(fname)){
         //append to message first name is invalid
         message = message + "First name invalid!\n";
-        return false;
+        isValid = false;
     }
     //if last name not valid
     if(!nameValidate(lname)){
         //append to message last name is invalid
         message = message + "Last name invalid!\n";
-        return false;
+        isValid = false;
     }
     //if email not valid
     if(!emailValidate(email)){
         //append to message email is invalid
         console.log(email);
         message = message + "Email invalid!\n";
-        return false;
+        isValid = false;
     }
     //if birth date not valid
     if (!dateValidate(bday)){
         //append to message birth date is invalid
         message = message + "Birth date invalid!\n";
-        return false;
+        isValid = false;
     }
    
     
     //display an error message
     errorMessage.innerHTML = message;
-    return true;
+    return isValid;
 }
 
 //name validation
@@ -66,6 +67,5 @@ function dateValidate(date){
 //email validation
 function emailValidate(email){
     //must have characters, then @, then more characters, then ., then 2 or 3 more characters
-    console.log("email" + email);
     return /[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}/.test(email);
 }

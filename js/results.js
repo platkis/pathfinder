@@ -1,21 +1,20 @@
 
-function drawMap() {
-    //array of lcoations including names, lat, long and links
-    var locations = [
-        ['Rail Trail', 43.235375, -79.827632, "../php/railtrail.php"],
-        ['Bruce Trail', 43.23425, -80,"../php/brucetrail.php"]
-    ];   
+// function drawMap() {
+//     //array of lcoations including names, lat, long and links
+//     var locations = [
+//         ['Rail Trail', 43.235375, -79.827632, "../php/railtrail.php"],
+//         ['Bruce Trail', 43.23425, -80,"../php/brucetrail.php"]
+//     ];   
 
-    //initialize map with zoom and center options
-    var map = new google.maps.Map(document.getElementById('map'), {
-        zoom: 8,
-        center: new google.maps.LatLng(43, -79)
-    });
+//     //initialize map with zoom and center options
+//     var map = new google.maps.Map(document.getElementById('map'), {
+//         zoom: 8,
+//         center: new google.maps.LatLng(43, -79)
+//     });
     
-    //draw the markers and the infowindows
-    drawMarkers(map,locations);
-}
-
+//     //draw the markers and the infowindows
+//     drawMarkers(map,locations);
+// }
 function drawMarkers(map,locations){
     var marker, i;
     //loop through all the locations
